@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body style="background-color: #D9D9D9; font-family: 'Roboto', sans-serif;">
+    <%- include('../partials/nav'); %>
+  <div class="container-fluid">
+    <div class="content-wrapper">
+       <div class="card" style="background: #f0f2f3; border-radius: 5px;">
+          <div class="card-header" style="background: #FFFF; margin-bottom: 20px;">
+             <div class="row">
+                <div class="col-lg-6">
+                   <h3 style="font-family: 'Roboto';
+                      font-style: normal;
+                      font-weight: 400;
+                      font-size: 24px;
+                      line-height: 28px;">
+                      Data Pasien Poli Umum : <b>NANDA AYU ROZIKA,dr</b> 
+                </h3>
+                </div>
+                <div class="col-lg-6" style="text-align: right">
+                   <div class="d-inline">
+                      <a class="btn btn-info" href="dashboard.html"><i class="fas fa-book" aria-hidden="true"></i>
+                      Daftar Poli</a>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="card-body">
+             <div class="col-lg-12">
+                <ul class="nav nav-tabs">
+                   <li class="nav-item">
+                      <a class="rounded-top font-weight-bold nav-link border border-light btn btn-custome" onclick="tampilkanTabel1()" id="button1" role="tab" >
+                      <b class="judul-atas" style="color: white;"> Pemeriksaan Belum Dimulai </b>
+                      </a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="rounded-top font-weight-bold nav-link border border-light btn btn-custome active" onclick="tampilkanTabel2()" id="button2" role="tab" >
+                      <b class="judul-atas" style="color: white;"> Pemeriksaan Dimulai </b>
+                      </a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="rounded-top font-weight-bold nav-link border border-light btn btn-custome active" onclick="tampilkanTabel3()" id="button3" role="tab"
+                         >
+                      <b class="judul-atas" style="color: white;"> Pemeriksaan Selesai </b>
+                      </a>
+                   </li>
+                </ul>
+             </div>
+             <div class="col-lg-12">
+                <div class="form-row g-3" style="margin-top: 15px;">
+                   <div class="form-group col-md-2">
+                      <label for="tanggal-awal" class="form-label">Tanggal Awal</label>
+                      <input type="date" id="tanggal-awal" class="form-control col-md-12"  aria-label="dd/mm/yyyy">
+                   </div>
+                   <div class="form-group col-md-2">
+                      <label for="tanggal-akhir" class="form-label">Tanggal Akhir</label>
+                      <input type="date" id="tanggal-akhir" class="form-control col-md-12" aria-label="dd/mm/yyyy">
+                   </div>
+                   <div class="form-group col-md-2">
+                      <label for="nama-pasien" class="form-label">Nama Pasien</label>
+                      <input type="text" id="nama-pasien" class="form-control col-md-12" aria-label="dd/mm/yyyy">
+                   </div>
+                   <div class="form-group col-md-2">
+                      <label for="reg" class="form-label">No. Reg</label>
+                      <input type="text" id="reg" class="form-control col-md-12" aria-label="dd/mm/yyyy">
+                   </div>
+                   <div class="form-group col-md-2">
+                      <label for="penjamin" class="form-label">Penjamin</label>
+                      <select id="penjamin" class="form-control col-md-12">
+                         <option selected>Choose...</option>
+                         <option>UMUM</option>
+                         <option>BPJS KESEHATAN</option>
+                         <option>CICILAN</option>
+                         <option>KREDIT</option>
+                      </select>
+                   </div>
+                   <div class="form-group col" style="margin-top: 30px;">
+                      <button type="submit" class="btn btn-primary mb-2"><span class="bi-search"></span>&nbsp;Cari Data</button>
+                   </div>
+                </div>
+             </div>
+             <div class="col-lg-12">
+                <div class="tab-pane fade show active" id="table1" role="tabpanel" aria-labelledby="nav-home-tab">
+                   <table class="table table-bordered">
+                      <thead>
+                         <tr>
+                            <th scope="col">No. Antri</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Detail Kunjungan</th>
+                            <th scope="col">Penjamin</th>
+                            <th scope="col">Aksi</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         <tr>
+                            <th scope="row">1</th>
+                            <td>
+                               <ul class="list-group list-group-flush">AMARIS</ul>
+                               <ul class="list-group list-group-flush">Umur : 48 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00002831 / 0000002852</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230320144721007120</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 20/03/2023</ul>
+                            </td>
+                            <td>UMUM</td>
+                            <td>
+                               <a class="btn btn-info" href="#">
+                               Panggil</a>
+                            </td>
+                         </tr>
+                         <tr>
+                            <th scope="row">2</th>
+                            <td>
+                               <ul class="list-group list-group-flush">ESRON SINAGA</ul>
+                               <ul class="list-group list-group-flush">Umur : 57 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00006231 / 0000006265</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230225080955002679</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 25/02/2023</ul>
+                            </td>
+                            <td>COB BPJS PTPN V</td>
+                            <td>
+                               <a class="btn btn-info" href="#">
+                               Panggil</a>
+                            </td>
+                         </tr>
+                         <tr>
+                            <th scope="row">3</th>
+                            <td>
+                               <ul class="list-group list-group-flush">RICKY EFENDI SIDAURUK</ul>
+                               <ul class="list-group list-group-flush">Umur : 48 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00006114 / 0000006148</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230225080958009077</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 25/02/2023</ul>
+                            </td>
+                            <td>COB BPJS PTPN V</td>
+                            <td>
+                               <a class="btn btn-info" href="#">
+                               Panggil</a>
+                            </td>
+                         </tr>
+                         <tr>
+                            <th scope="row">4</th>
+                            <td>
+                               <ul class="list-group list-group-flush">AHMAD DAUD</ul>
+                               <ul class="list-group list-group-flush">Umur : 61 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00015472 / 0000015559</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230301170421008713</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 01/03/2023</ul>
+                            </td>
+                            <td>UMUM</td>
+                            <td>
+                               <a class="btn btn-info" href="#">
+                               Panggil</a>
+                            </td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+                <div class="tab-pane fade show active" id="table2" role="tabpanel" aria-labelledby="nav-home-tab" style="display: none;">
+                   <table class="table table-bordered">
+                      <thead>
+                         <tr>
+                            <th scope="col">No. Antri</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Detail Kunjungan</th>
+                            <th scope="col">Penjamin</th>
+                            <th scope="col">Aksi</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         <tr>
+                            <th scope="row">1</th>
+                            <td>
+                               <ul class="list-group list-group-flush">AMARIS</ul>
+                               <ul class="list-group list-group-flush">Umur : 48 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00002831 / 0000002852</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230320144721007120</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 20/03/2023</ul>
+                            </td>
+                            <td>UMUM</td>
+                            <td>
+                               <small style="
+                                  font-style: normal;
+                                  font-weight: 600;
+                                  font-size: 16px;
+                                  line-height: 19px; color: #26e435;">Status Sedang Diperiksa</small>
+                            </td>
+                         </tr>
+                         <tr>
+                            <th scope="row">2</th>
+                            <td>
+                               <ul class="list-group list-group-flush">ESRON SINAGA</ul>
+                               <ul class="list-group list-group-flush">Umur : 57 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00006231 / 0000006265</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230225080955002679</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 25/02/2023</ul>
+                            </td>
+                            <td>COB BPJS PTPN V</td>
+                            <td>
+                               <small style="
+                                  font-style: normal;
+                                  font-weight: 600;
+                                  font-size: 16px;
+                                  line-height: 19px; color: #26e435;">Status Sedang Diperiksa</small>
+                            </td>
+                         </tr>
+                         <tr>
+                            <th scope="row">3</th>
+                            <td>
+                               <ul class="list-group list-group-flush">RICKY EFENDI SIDAURUK</ul>
+                               <ul class="list-group list-group-flush">Umur : 48 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00006114 / 0000006148</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230225080958009077</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 25/02/2023</ul>
+                            </td>
+                            <td>COB BPJS PTPN V</td>
+                            <td>
+                               <small style="
+                                  font-style: normal;
+                                  font-weight: 600;
+                                  font-size: 16px;
+                                  line-height: 19px; color: #26e435;">Status Sedang Diperiksa</small>
+                            </td>
+                         </tr>
+                         <tr>
+                            <th scope="row">4</th>
+                            <td>
+                               <ul class="list-group list-group-flush">AHMAD DAUD</ul>
+                               <ul class="list-group list-group-flush">Umur : 61 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00015472 / 0000015559</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230301170421008713</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 01/03/2023</ul>
+                            </td>
+                            <td>UMUM</td>
+                            <td>
+                               <small style="
+                                  font-style: normal;
+                                  font-weight: 600;
+                                  font-size: 16px;
+                                  line-height: 19px; color: #26e435;">Status Sedang Diperiksa</small>
+                            </td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+                <div class="tab-pane fade show active" id="table3" role="tabpanel" aria-labelledby="nav-home-tab" style="display: none;">
+                   <table class="table table-bordered">
+                      <thead>
+                         <tr>
+                            <th scope="col">No. Antri</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Detail Kunjungan</th>
+                            <th scope="col">Penjamin</th>
+                            <th scope="col">Aksi</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         <tr>
+                            <th scope="row">1</th>
+                            <td>
+                               <ul class="list-group list-group-flush">AMARIS</ul>
+                               <ul class="list-group list-group-flush">Umur : 48 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00002831 / 0000002852</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230320144721007120</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 20/03/2023</ul>
+                            </td>
+                            <td>UMUM</td>
+                            <td>
+                               <small style="
+                                  font-style: normal;
+                                  font-weight: 600;
+                                  font-size: 16px;
+                                  line-height: 19px; color: #179879;">Selesai</small>
+                            </td>
+                         </tr>
+                         <tr>
+                            <th scope="row">2</th>
+                            <td>
+                               <ul class="list-group list-group-flush">ESRON SINAGA</ul>
+                               <ul class="list-group list-group-flush">Umur : 57 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00006231 / 0000006265</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230225080955002679</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 25/02/2023</ul>
+                            </td>
+                            <td>COB BPJS PTPN V</td>
+                            <td>
+                               <small style="
+                                  font-style: normal;
+                                  font-weight: 600;
+                                  font-size: 16px;
+                                  line-height: 19px; color: #179879;">Selesai</small>
+                            </td>
+                         </tr>
+                         <tr>
+                            <th scope="row">3</th>
+                            <td>
+                               <ul class="list-group list-group-flush">RICKY EFENDI SIDAURUK</ul>
+                               <ul class="list-group list-group-flush">Umur : 48 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00006114 / 0000006148</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230225080958009077</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 25/02/2023</ul>
+                            </td>
+                            <td>COB BPJS PTPN V</td>
+                            <td>
+                               <small style="
+                                  font-style: normal;
+                                  font-weight: 600;
+                                  font-size: 16px;
+                                  line-height: 19px; color: #179879;">Selesai</small>
+                            </td>
+                         </tr>
+                         <tr>
+                            <th scope="row">4</th>
+                            <td>
+                               <ul class="list-group list-group-flush">AHMAD DAUD</ul>
+                               <ul class="list-group list-group-flush">Umur : 61 Tahun</ul>
+                               <ul class="list-group list-group-flush">MR : 00015472 / 0000015559</ul>
+                            </td>
+                            <td>
+                               <ul class="list-group list-group-flush">No. Daftar : 230301170421008713</ul>
+                               <ul class="list-group list-group-flush">Tgl Kunjungan : 01/03/2023</ul>
+                            </td>
+                            <td>UMUM</td>
+                            <td>
+                               <small style="
+                                  font-style: normal;
+                                  font-weight: 600;
+                                  font-size: 16px;
+                                  line-height: 19px; color: #179879;">Selesai</small>
+                            </td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+</body>
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</html>

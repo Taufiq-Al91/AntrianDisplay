@@ -1,0 +1,51 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Antrian Pasien</title>
+</head>
+<body>
+  <h1>Antrian Pasien</h1>
+  <p>Nomor Antrian saat ini: <span id="current-number"></span></p>
+  <table>
+    <thead>
+      <tr>
+        <th>No. Antrian</th>
+        <th>Nama Pasien</th>
+      </tr>
+    </thead>
+    <tbody id="queue-body">
+    </tbody>
+  </table>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // tangkap event "queue" dari server
+    socket.on('queue', (queueData) => {
+      // hapus semua row pada tabel
+      const queueBody = document.querySelector('#queue-body');
+      queueBody.innerHTML = '';
+
+      // tambahkan row baru untuk setiap pasien pada antrian
+      queueData.forEach((name, index) => {
+        const row = queueBody.insertRow();
+        const numberCell = row.insertCell(0);
+        const nameCell = row.insertCell(1);
+        numberCell.textContent = index + 1;
+        nameCell.textContent = name;
+      });
+
+      // update nomor antrian saat ini
+      const currentNumber = document.querySelector('#current-number');
+      if (queueData.length > 0) {
+        currentNumber.textContent = queueData.length;
+      } else {
+        currentNumber.textContent = '-';
+      }
+    });
+  </script>
+</body>
+</html>

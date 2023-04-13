@@ -1,2 +1,0 @@
-# AntrianDisplay
-Antrian Display 
